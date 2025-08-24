@@ -16,6 +16,7 @@ html {
     --card-background: #161b22;
     --text-color: #c9d1d9;
     --light-gray: #8b949e;
+    --inspire-bg: #1A1A1A; /* New color for the aesthetic inspiration */
 }
 
 body {
@@ -79,7 +80,7 @@ nav ul li a:hover {
     color: var(--text-color); /* Updated to a brighter color on hover */
 }
 
-/* --- Hero Section (Home) */
+/* --- Hero Section (Home) --- */
 .hero {
     height: 100vh;
     display: flex;
@@ -156,17 +157,27 @@ nav ul li a:hover {
     justify-content: center;
 }
 
-/* All social icons are now white and have a consistent hover color */
+/* Social icons with original colors and a pop-out animation on hover */
 .social-links a {
-    font-size: 1.8rem; /* Made icons bigger */
+    font-size: 1.8rem;
     transition: transform 0.3s ease, color 0.3s ease;
-    color: #fff; /* ALL social icons are now white */
 }
 
+.social-links a .fa-linkedin { color: #0077b5; }
+.social-links a .fa-github { color: #fff; }
+.social-links a .fa-envelope { color: #d44638; } /* Changed to red */
+.social-links a .fa-file-download { color: #fff; }
+
+
 .social-links a:hover {
-    transform: translateY(-5px);
-    color: var(--secondary-color); /* Hover color is consistent blue */
+    transform: translateY(-5px) scale(1.1);
 }
+
+/* Individual icon hover colors to make them slightly brighter */
+.social-links a:hover .fa-linkedin { color: #00a0dc; }
+.social-links a:hover .fa-github { color: #c9d1d9; }
+.social-links a:hover .fa-envelope { color: #ea4335; }
+.social-links a:hover .fa-file-download { color: #c9d1d9; }
 
 
 /* --- General Section Styles --- */
@@ -205,13 +216,13 @@ nav ul li a:hover {
 }
 
 
-/* --- Skills Section --- */
+/* --- Skills & Projects Sections --- */
 .skills-carousel {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.5rem; /* Reduced gap */
+    gap: 1.5rem;
 }
 
 .skill-item {
@@ -224,11 +235,24 @@ nav ul li a:hover {
 }
 
 .skill-item i {
-    font-size: 2rem; /* Reduced icon size */
-    color: var(--primary-color);
+    font-size: 2rem;
     margin-bottom: 0.5rem;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease;
 }
+
+/* Individual skill icon colors - Brand colors */
+.fa-js { color: #f7df1e; }
+.fa-html5 { color: #e34c26; }
+.fa-css3-alt { color: #2965f1; }
+.fa-c { color: #a8b9cc; }
+.fa-java { color: #f89820; }
+.fa-python { color: #306998; }
+.fa-react { color: #61dafb; }
+.fa-node-js { color: #339933; }
+.fa-server { color: #9B59B6; } /* Example color for Express.js server */
+.fa-database { color: #4479a1; } /* Example color for MySQL/MongoDB */
+.fa-git-alt { color: #f1502f; }
+
 
 .skill-item p {
     font-size: 0.9rem;
@@ -237,20 +261,19 @@ nav ul li a:hover {
 }
 
 .skill-item:hover i {
-    transform: scale(1.1);
-    color: var(--secondary-color);
+    transform: translateY(-5px) scale(1.1); /* Adds the pop-out effect on hover */
 }
 
-/* --- Projects & Certificates Sections --- */
+/* Projects and Certificates Sections now use a card grid */
 .projects-grid, .certificates-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly smaller cards */
-    gap: 1.5rem; /* Reduced gap */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
-.card {
-    background-color: var(--card-background);
-    padding: 1.5rem; /* Reduced padding */
+.project-card, .certificate-card {
+    background-color: var(--inspire-bg); /* Using the new inspirational background color */
+    padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -258,54 +281,39 @@ nav ul li a:hover {
     animation: card-pop-in 0.8s ease-out forwards;
 }
 
-.card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+.project-card:hover, .certificate-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Adjusted animation */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     border-color: var(--secondary-color);
 }
 
 .project-card h3, .certificate-card h3 {
-    font-size: 1.1rem; /* Smaller font size */
+    font-size: 1.1rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
 .project-card p, .certificate-card p {
-    font-size: 0.9rem; /* Smaller font size */
+    font-size: 0.9rem;
     color: var(--light-gray);
 }
 
-.project-links a {
+.project-links a, .certificate-card a {
     color: var(--secondary-color);
     text-decoration: none;
     margin-right: 1rem;
     transition: color 0.3s ease;
 }
 
-.project-links a:hover {
-    color: var(--primary-color);
-}
-
-.certificate-card h3 {
-    color: var(--primary-color);
-}
-
-.certificate-card a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    margin-right: 1rem;
-    transition: color 0.3s ease;
-}
-
-.certificate-card a:hover {
+.project-links a:hover, .certificate-card a:hover {
     color: var(--primary-color);
 }
 
 /* --- Contact Section --- */
 .contact-text {
     text-align: center;
-    margin-bottom: 1.5rem; /* Reduced margin */
-    font-size: 1rem; /* Smaller font size */
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
     color: var(--light-gray);
 }
 
@@ -313,19 +321,19 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem; /* Reduced gap */
+    gap: 0.8rem;
 }
 
 .email-btn {
     display: inline-flex;
     align-items: center;
-    padding: 0.7rem 1.5rem; /* Reduced padding */
+    padding: 0.7rem 1.5rem;
     background-color: var(--primary-color);
     color: var(--background-color);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 0.9rem; /* Smaller font size */
+    font-size: 0.9rem;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -343,7 +351,7 @@ nav ul li a:hover {
 /* --- Footer --- */
 footer {
     text-align: center;
-    padding: 1.5rem; /* Reduced padding */
+    padding: 1.5rem;
     background-color: var(--card-background);
     border-top: 1px solid rgba(201, 209, 217, 0.1);
     color: var(--light-gray);
@@ -369,7 +377,7 @@ footer {
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
-        gap: 0.5rem; /* Reduced gap for smaller header */
+        gap: 0.5rem;
         padding: 0.5rem 5%;
     }
 
@@ -385,7 +393,7 @@ footer {
 
     .hero-content {
         flex-direction: column;
-        padding-top: 2rem; /* Add padding to move the photo down */
+        padding-top: 2rem;
     }
 
     .hero-image-container {

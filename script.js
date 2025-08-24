@@ -1,6 +1,6 @@
 // Data for your portfolio sections
 const skills = [
- { name: "JavaScript", icon: "fab fa-js" },
+    { name: "JavaScript", icon: "fab fa-js" },
     { name: "HTML", icon: "fab fa-html5" },
     { name: "CSS", icon: "fab fa-css3-alt" },
     { name: "C", icon: "fas fa-c" },
@@ -84,7 +84,6 @@ const createProjects = () => {
                 <p>${project.description}</p>
                 <div class="project-links">
                     <a href="${project.github}" target="_blank">GitHub <i class="fab fa-github"></i></a>
-                    <a href="${project.live}" target="_blank">Live Demo <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         `;
@@ -111,9 +110,9 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-observer.unobserve(entry.target);
- }
-});
+            observer.unobserve(entry.target);
+        }
+    });
 }, { threshold: 0.2 });
 
 document.querySelectorAll('.card').forEach(card => {
