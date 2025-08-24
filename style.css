@@ -1,0 +1,362 @@
+/* Basic Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0077b6; /* LinkedIn Blue */
+    --secondary-color: #50e3c2;
+    --background-color: #0d1117; /* GitHub Dark */
+    --card-background: #161b22;
+    --text-color: #c9d1d9;
+    --light-gray: #8b949e;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: rgba(22, 27, 34, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201, 209, 217, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the left */
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--secondary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-left: auto; /* Pushes the list to the right */
+}
+
+nav ul li {
+    margin-left: 2.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--light-gray);
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* --- Hero Section (Home) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(45deg, #0d1117, #161b22);
+    padding: 0 5%;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1000px;
+}
+
+.hero-image-container {
+    /* Animation removed */
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 119, 182, 0.4);
+    transition: transform 0.5s ease, border-color 0.5s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05) rotate(3deg);
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0 0 30px rgba(80, 227, 194, 0.6);
+}
+
+.hero-text {
+    text-align: center;
+}
+
+.name {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    color: var(--text-color);
+    position: relative;
+    cursor: pointer;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    /* Animation removed */
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.name:hover {
+    color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.bio {
+    font-size: 1.2rem;
+    color: var(--light-gray);
+    max-width: 600px;
+    margin: 1rem auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem; /* Adjusted gap for smaller icons */
+    margin-top: 2rem;
+    animation: fadeIn 2s ease-in-out;
+    justify-content: center; /* Centers the social links */
+}
+
+/* Custom colors for social icons */
+.social-links a {
+    font-size: 2rem; /* Reduced icon size */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a.linkedin-icon { color: #0077b5; }
+.social-links a.github-icon { color: #fff; }
+.social-links a.email-icon { color: #d44638; } /* Gmail red */
+.social-links a.download-icon {
+    color: var(--primary-color) !important;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.1); /* General hover effect for all icons */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Individual icon hover colors for a more realistic glow */
+.social-links a.linkedin-icon:hover { color: #00a0dc; }
+.social-links a.github-icon:hover { color: #818181; }
+.social-links a.email-icon:hover { color: #ea4335; }
+.social-links a.download-icon:hover { background-color: var(--primary-color); color: var(--background-color) !important; }
+
+/* --- General Section Styles --- */
+.section {
+    padding: 6rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: color 0.3s ease;
+}
+
+.section-title:hover {
+    color: var(--secondary-color);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 4px;
+    background: var(--secondary-color);
+    bottom: -10px;
+    left: 15%;
+    border-radius: 2px;
+}
+
+
+/* --- Skills Section --- */
+.skills-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows skills to wrap on smaller screens */
+    gap: 2rem; /* Adds space between skill items */
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, color 0.3s ease; /* Transition for the new effect */
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+.skill-item i {
+    font-size: 2.5rem; /* Slightly larger icons */
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-item p {
+    font-size: 1rem;
+    color: var(--light-gray);
+    font-weight: 500;
+}
+
+.skill-item:hover i {
+    transform: scale(1.1);
+    color: var(--secondary-color);
+}
+
+/* --- Projects & Certificates Sections --- */
+.projects-grid, .certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+    animation: card-pop-in 0.8s ease-out forwards;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-color: var(--secondary-color);
+}
+
+.project-card h3, .certificate-card h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.project-card p, .certificate-card p {
+    color: var(--light-gray);
+}
+
+.project-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: var(--primary-color);
+}
+
+.certificate-card h3 {
+    color: var(--secondary-color);
+}
+
+.certificate-card a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.certificate-card a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Keyframes & Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes card-pop-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin: 0 0.5rem;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+    }
+
+    .hero-image-container {
+        margin-bottom: 2rem;
+    }
+}
