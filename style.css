@@ -100,6 +100,9 @@ nav ul li a:hover {
     max-width: 1000px;
 }
 
+.hero-image-container {
+    /* Animation removed */
+}
 
 .profile-image {
     width: 220px; /* Made the image bigger */
@@ -214,12 +217,14 @@ nav ul li a:hover {
 
 
 /* --- Skills & Projects Sections --- */
-.skills-carousel {
+.skills-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 1.5rem;
+    padding: 1rem 0;
+    overflow-x: hidden;
 }
 
 .skill-item {
@@ -227,45 +232,39 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    flex-shrink: 0;
+    margin: 0 0.5rem;
     transition: transform 0.3s ease;
-    animation: slideIn 1.5s ease-out forwards;
 }
 
 .skill-item i {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    transition: transform 0.3s ease;
 }
 
 /* Individual skill icon colors - Brand colors */
+.fa-python { color: #306998; }
 .fa-js { color: #f7df1e; }
-.fa-html5 { color: #e34c26; }
-.fa-css3-alt { color: #2965f1; }
 .fa-c { color: #a8b9cc; }
 .fa-java { color: #f89820; }
-.fa-python { color: #306998; }
+.fa-html5 { color: #e34c26; }
+.fa-css3-alt { color: #2965f1; }
 .fa-react { color: #61dafb; }
 .fa-bootstrap { color: #563d7c; }
+.fa-database { color: #a8b9cc; }
 .fa-docker { color: #0db7ed; }
 .fa-aws { color: #ff9900; }
-.fa-code-branch { color: #54b4d3; } /* Example color for DSA */
-
 
 .skill-item p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--light-gray);
     font-weight: 500;
-    transition: color 0.3s ease;
 }
 
-.skill-item:hover i {
-    transform: translateY(-5px) scale(1.1);
+/* Hover effect on skill items */
+.skill-item:hover {
+    transform: scale(1.1);
 }
-
-.skill-item:hover p {
-    color: var(--text-color);
-}
-
 
 /* Projects and Certificates Sections now use a card grid */
 .projects-grid, .certificates-grid {
@@ -375,6 +374,7 @@ footer {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
