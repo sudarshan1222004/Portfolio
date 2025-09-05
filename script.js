@@ -39,7 +39,7 @@ const certificates = [
     {
         title: "Full Stack Web Development Bootcamp",
         organization: "Angela-Code Brewary",
-        link: "https://www.linkedin.com/posts/sudarshan-madival-933897283_fullstackdeveloper-udemylearning-webdevelopment-activity-7359102983797661697-Bdh1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUCHXcBLGHxneZ6XLd4lO8Hk14itMF1qGM" 
+        link: "#https://www.linkedin.com/posts/sudarshan-madival-933897283_fullstackdeveloper-udemylearning-webdevelopment-activity-7359102983797661697-Bdh1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUCHXcBLGHxneZ6XLd4lO8Hk14itMF1qGM" 
     },
     {
         title: "C Programming & Data Structures",
