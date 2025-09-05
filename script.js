@@ -1,17 +1,18 @@
 // Data for your portfolio sections
 const skills = [
-    { name: "JavaScript", icon: "fab fa-js" },
-    { name: "HTML", icon: "fab fa-html5" },
-    { name: "CSS", icon: "fab fa-css3-alt" },
-    { name: "C", icon: "fas fa-c" },
-    { name: "Java", icon: "fab fa-java" },
     { name: "Python", icon: "fab fa-python" },
-    { name: "React", icon: "fab fa-react" },
-    { name: "Node.js", icon: "fab fa-node-js" },
-    { name: "Express.js", icon: "fas fa-server" },
-    { name: "MongoDB", icon: "fas fa-database" },
-    { name: "MySQL", icon: "fas fa-database" },
-    { name: "Git", icon: "fab fa-git-alt" }
+    { name: "JavaScript", icon: "fab fa-js" },
+    { name: "C", icon: "fas fa-c" },
+    { name: "Java", icon: "fab fa-java" },
+    { name: "HTML", icon: "fab fa-html5" },
+    { name: "CSS", icon: "fab fa-css3-alt" },
+    { name: "React", icon: "fab fa-react" },
+    { name: "Bootstrap", icon: "fab fa-bootstrap" },
+    { name: "MongoDB", icon: "fas fa-database" },
+    { name: "MySQL", icon: "fas fa-database" },
+    { name: "Docker", icon: "fab fa-docker" },
+    { name: "AWS", icon: "fab fa-aws" },
+    { name: "Data Structures and Algorithms", icon: "fas fa-code-branch" }
 ];
 
 const projects = [
@@ -20,14 +21,14 @@ const projects = [
         description: "A full-stack web application for creating and scheduling online tests, complete with student logins, timers, auto-scoring, and an admin dashboard.",
         github: "https://github.com/sudarshan1222004/CODE-NINJAS", 
         live: "#" 
-    },
-    {
+    },
+    {
         title: "Online Code Editor",
         description: "A browser-based editor that allows users to write and execute code online without local installations, with a secure backend for code execution.",
         github: "#",
         live: "#"
     },
-    {
+    {
         title: "Tulu Language LLM (Ongoing)",
         description: "An ongoing project to train a custom language model for the Tulu language using a custom dataset and tokens.",
         github: "https://github.com/sudarshan1222004/Saraswati-Tulu-LLM",
@@ -40,18 +41,18 @@ const certificates = [
         title: "Full Stack Web Development Bootcamp",
         organization: "Angela-Code Brewary",
         link: "#" 
-    },
-    {
+    },
+    {
         title: "C Programming & Data Structures",
         organization: "CodeChef",
         link: "https://www.linkedin.com/posts/sudarshan-madival-933897283_dsa-codechef-codingjourney-activity-7363154579665940483-HSP-?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUCHXcBLGHxneZ6XLd4lO8Hk14itMF1qGM#"
     },
-    {
+    {
         title: "Postman API Fundamentals",
         organization: "Postman",
         link: "#"
     },
-    {
+    {
         title: "Web Development Workshops",
         organization: "SMVITM / IEEE",
         link: "#"
@@ -65,10 +66,7 @@ const createSkills = () => {
     skills.forEach(skill => {
         const skillItem = document.createElement('div');
         skillItem.classList.add('skill-item');
-        skillItem.innerHTML = `
-            <i class="${skill.icon}"></i>
-            <p>${skill.name}</p>
-        `;
+        skillItem.innerHTML = `<i class="${skill.icon}"></i>`;
         skillsCarousel.appendChild(skillItem);
     });
 };
@@ -84,6 +82,7 @@ const createProjects = () => {
                 <p>${project.description}</p>
                 <div class="project-links">
                     <a href="${project.github}" target="_blank">GitHub <i class="fab fa-github"></i></a>
+                    <a href="${project.live}" target="_blank">Live Demo <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         `;
