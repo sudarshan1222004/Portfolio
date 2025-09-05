@@ -100,9 +100,6 @@ nav ul li a:hover {
     max-width: 1000px;
 }
 
-.hero-image-container {
-    /* Animation removed */
-}
 
 .profile-image {
     width: 220px; /* Made the image bigger */
@@ -230,7 +227,7 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease;
     animation: slideIn 1.5s ease-out forwards;
 }
 
@@ -248,21 +245,27 @@ nav ul li a:hover {
 .fa-java { color: #f89820; }
 .fa-python { color: #306998; }
 .fa-react { color: #61dafb; }
-.fa-node-js { color: #339933; }
-.fa-server { color: #9B59B6; } /* Example color for Express.js server */
-.fa-database { color: #4479a1; } /* Example color for MySQL/MongoDB */
-.fa-git-alt { color: #f1502f; }
+.fa-bootstrap { color: #563d7c; }
+.fa-docker { color: #0db7ed; }
+.fa-aws { color: #ff9900; }
+.fa-code-branch { color: #54b4d3; } /* Example color for DSA */
 
 
 .skill-item p {
     font-size: 0.9rem;
     color: var(--light-gray);
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .skill-item:hover i {
-    transform: translateY(-5px) scale(1.1); /* Adds the pop-out effect on hover */
+    transform: translateY(-5px) scale(1.1);
 }
+
+.skill-item:hover p {
+    color: var(--text-color);
+}
+
 
 /* Projects and Certificates Sections now use a card grid */
 .projects-grid, .certificates-grid {
